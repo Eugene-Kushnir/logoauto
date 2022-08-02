@@ -10,12 +10,14 @@ burger.addEventListener('click', ()=>{
    header__logo.classList.toggle('active');
    burger.classList.toggle('active');
    header.classList.toggle('active');
-   // body.classList.toggle('_lock');
-   // emptyContainer.addEventListener('click', ()=>{
-   //    if(header_block.classList.contains('_active')){
-   //       header_block.classList.remove('_active');
-   //       burger.classList.remove('active');
-   //       body.classList.remove('_lock');
-   //    }
-   // })
+
+   document.addEventListener('keydown', (e)=>{
+      if (e.key == 'Escape' && header__navbar.classList.contains('_active')){
+            header__navbar.classList.remove('_active');
+            header__login.classList.remove('_active');
+            header__logo.classList.remove('active');
+            header.classList.remove('active');
+            burger.classList.remove('active');
+         }
+   })
 })
