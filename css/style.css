@@ -66,7 +66,7 @@ h1, h2, h3{
    font-size: 14px;
    line-height: 19px;
 }
-.login_auth a{
+.login_auth{
    font-size: 16px;
    color: #FF2E63;
    margin-right: 30px;
@@ -74,9 +74,6 @@ h1, h2, h3{
    font-weight: 600;
    font-size: 16px;
    line-height: 22px;
-}
-.login_registry a{
-   color:#FFFFFF;
 }
 .burger{
    position:fixed;
@@ -102,7 +99,7 @@ h1, h2, h3{
    margin-bottom: 50px;
    color: #343434;
 }
-.bunner__text h1 p{
+.bunner__text h1 span{
    color:#FF2E63
 }
 .bunner__text-button{
@@ -110,12 +107,10 @@ h1, h2, h3{
    justify-content: center;
    align-items: center;
    width: 120px;
-   background: #346CD9;
-}
-.bunner__text-button span a{
    font-size: 16px;
    line-height: 22px;
    color: #FFFFFF;
+   background: #346CD9;
 }
 .bunner__img{
    width: 59%;
