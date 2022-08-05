@@ -38,9 +38,9 @@ new Swiper('.competitions-cards, .latest_boxs', {
       enabled: true,
       onlyInViewport: true,
    },
-   mousewheel: {
-      invert: true,
-    },
+   // mousewheel: {
+   //    invert: true,
+   //  },
    slidesPerView: 'auto',
 
    spaceBetween: 30,
