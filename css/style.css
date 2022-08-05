@@ -33,6 +33,22 @@ h1, h2, h3{
 ._container{
    width: 91.41vw;
 }
+.reviews_description .swiper{
+   padding: 15px 0 !important;
+}
+.competitions-card.swiper-slide, .latest_box.swiper-slide{
+   width: auto !important;
+}
+.reviews_description_wrapper.swiper-wrapper{
+   align-items: center;
+}
+.reviews-slide.swiper-slide{
+   
+}
+.competitions-card.swiper-slide{
+   width: auto !important;
+}
+.swiper-pagination-bullet
 .wrapper {
    margin: 0px auto;
    display: flex;
@@ -42,7 +58,6 @@ h1, h2, h3{
 }
 .header{
    display: flex;
-   justify-content: space-between;
    align-items: center;
    margin: 38px auto 36px;
 }
@@ -52,12 +67,20 @@ h1, h2, h3{
    line-height: 38px;
    letter-spacing: 0.05em;
    text-transform: uppercase;
+   margin-right: 108px;
 }
 .logo span{
    color: #FF2E63
 }
+.menu{
+   display: flex;
+   align-items: center;
+   width: 100%;
+   justify-content: space-between;
+}
 .nav_list{
    display: flex;
+   flex-wrap: wrap;
    margin: 0 -15px;
 }
 .menu_link{
@@ -65,6 +88,9 @@ h1, h2, h3{
    font-weight: 600;
    font-size: 14px;
    line-height: 19px;
+}
+.header__login{
+   display: flex;
 }
 .login_auth{
    font-size: 16px;
@@ -135,7 +161,7 @@ h1, h2, h3{
    
 }
 .competitions{
-   margin: 0 auto 100px;
+   margin: 0 auto 85px;
 }
 .competitions-title{
    font-size: 36px;
@@ -145,13 +171,13 @@ h1, h2, h3{
 .competitions-cards{
    display: flex;
    justify-content: space-between;
-   margin: 0 -15px;
 }
 .competitions-card{
-   margin: 0 15px;
    width: 270px;
-   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
+   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15) !important;
    border-radius: 10px;
+   min-width: 0;
+   margin-bottom: 15px;
 }
 .competitions-card_img{
    margin-bottom: 20px;
@@ -237,6 +263,12 @@ h1, h2, h3{
 .reviews{
    display: flex;
    margin-bottom: 100px;
+   align-items: center;
+   height: 400px;
+}
+.reviews-slide{
+   margin: 0 auto;
+   height: 100%;
 }
 .reviews_description{
    min-height: 400px;
@@ -256,10 +288,11 @@ h1, h2, h3{
    color: #343434;
    max-width: 400px;
    padding: 0 120px 0;
-   margin-bottom: 30px;
    text-align: center;
+   margin: 30px auto;
 }
 .reviews_description__autor{
+   text-align: center;
    margin-bottom: 40px;
 }
 .reviews_description__dots{
@@ -267,23 +300,20 @@ h1, h2, h3{
    justify-content: center;
    margin: 0 -7.5px;
 }
-.reviews_description__dot{
-   width: 10px;
-   height: 10px;
-   margin: 0 7.5px;
-   background: rgba(255, 46, 99, 0.33);
-   border-radius: 50%;
-   cursor: pointer;
+.swiper-pagination-bullet{
+   width: 10px !important;
+   height: 10px !important;
+   background: rgba(255, 46, 99, 1) !important;
 }
-.reviews_description__dot._active{
-   background: #FF2E63;
+.swiper-pagination-bullet-active{
+   background: #FF2E63 !important;
 }
 .reviews_photo{
    width: 50%;
-   height: auto;
+   height: 100%;
 }
 .latest{
-   margin: 0 auto 100px;
+   margin: 0 auto 85px;
 }
 .latest_title{
    margin-bottom: 40px;
@@ -294,7 +324,6 @@ h1, h2, h3{
 }
 .latest_boxs{
    display: flex;
-   margin: 0 -15px;
    justify-content: space-between;
 }
 .latest_box{
@@ -303,7 +332,7 @@ h1, h2, h3{
    background: #FFFFFF;
    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
    border-radius: 10px;
-   margin: 0 15px;
+   margin-bottom: 15px;
 }
 .latest_box__img{
    margin-bottom: 20px;
@@ -318,6 +347,7 @@ h1, h2, h3{
 }
 .latest_box__date{
    color: #343434;
+   margin-bottom: 20px;
 }
 .footer{
    height: 70px;
@@ -345,29 +375,31 @@ h1, h2, h3{
 .footer__link li a{
    color: #FFFFFF;
 }
-@media only screen and (max-width: 1250px){
+/* @media only screen and (max-width: 1250px){
    .competitions-cards{
       overflow-x: scroll;
    }
-}
+} */
 @media only screen and (max-width: 1100px){
    .header{
-      position: fixed;
+      /* position: fixed; */
       flex-direction: column;
       margin: 0 auto;
       padding: 0;
       height: 56px;
       width: 100vw;
-      z-index: 150;
    }
    .header__logo{
       width: 100%;
+      position: fixed;
+      top: 0;
       height: auto;
       display: flex;
       align-items: center;
       padding: 10px 20px;
       margin-left: 20px;
       background-color:#FFFFFF;
+      z-index: 150;
    }
    .header__logo.active{
       background: #FF2E63;
@@ -379,9 +411,12 @@ h1, h2, h3{
    .header__login._active{
       margin-left: 18px;
    }
+
    .burger{
       display: flex;
       align-items:center;
+      position: fixed;
+      z-index: 160;
    }
    .burger_field{
       padding: 5px 4px;
@@ -412,37 +447,26 @@ h1, h2, h3{
       transform: translateY(-6px) rotate(-45deg);
       background: #FF2E63;
    }
-   .header__navbar{
+   .menu{
       transform: translate(0px, -3000%);
       transition: all 0.3s ease 0s;
    }
-   .header__login{
-      transform: translate(0px, -3500%);
-      transition: all 0.3s ease 0s;
-   }
-   .header__navbar._active{
+   .menu._active{
       transform: translate(0px, 0px);
-      padding: 18px;
-      width: 100%;
-      background: white;
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: flex-end;
-      z-index: 100;
-     
+      flex-direction: column;
+      background: #FFFFFF;
+      position: fixed;
+      top: 56px;
+      display: block;
+      height: 100vh;
+      overflow-y: auto;
+      padding-left: 18px;
+      z-index: 1500;
    }
    .header__login._active{
-      transform: translate(0px, 0px);
-      width: 100%;
-      background: white;
       display: flex;
       flex-direction: row-reverse;
       justify-content: flex-end;
-      z-index: 100;
-      margin-top: -1px;
-      padding-left: 18px;
-      padding-bottom: 100vw;
-       
    }
    .nav_list{
       padding: 16px;
@@ -507,7 +531,7 @@ h1, h2, h3{
       width: 100%;
    }
    .reviews_description__desc{
-      padding: 0 16px 0;
+      width: auto;
    }
 }
 @media only screen and (max-width: 768px){
@@ -549,6 +573,10 @@ h1, h2, h3{
       width: 425px;
       height: 170px;
       right: 169px;
+   }
+   .reviews_description__desc{
+      padding: 0 16px 0;
+      width: auto;
    }
 }
 
