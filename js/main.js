@@ -38,9 +38,6 @@ new Swiper('.competitions-cards, .latest_boxs', {
       enabled: true,
       onlyInViewport: true,
    },
-   // mousewheel: {
-   //    invert: true,
-   //  },
    slidesPerView: 'auto',
 
    spaceBetween: 30,
@@ -61,6 +58,11 @@ new Swiper('.reviews_description', {
       enabled: true,
       onlyInViewport: true,
    },
+   loop: true,
+   autoplay: {
+      delay: 4000,
+      disableOnInteraction: false
+    },
    pagination: {
       el: ".swiper-pagination",
     }
