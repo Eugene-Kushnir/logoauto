@@ -309,10 +309,10 @@ h1, h2, h3{
    font-size: 20px;
    line-height: 30px;
    color: #343434;
-   min-width: 400px;
+   /* min-width: 400px; */
    padding: 0 120px 0;
    text-align: center;
-   margin: 30px auto;
+   margin: 78px auto;
 }
 .reviews_description__autor{
    text-align: center;
@@ -409,34 +409,51 @@ h1, h2, h3{
       height: 56px;
       width: 100vw;
    }
+   .logo_wrapper{
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+   }
+   .logo_wrapper.active{
+      background: #FF2E63 !important;
+      display: flex;
+
+   }
    .header__logo{
-      width: 100%;
       position: fixed;
       top: 0;
+      width: 91.41vw;
       height: auto;
       display: flex;
       align-items: center;
-      padding: 10px 20px;
-      margin-left: 20px;
-      background-color:#FFFFFF;
-      z-index: 150;
+      padding: 10px 200px;
+      background: #FFFFFF;
+      z-index: 2000;
    }
    .header__logo.active{
       background: #FF2E63;
-      margin-left: 18px;
+   }
+   .header.active{
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
    }
    .header.active .logo, .header.active .logo span{
       color: #FFFFFF;
    }
    .header__login._active{
-      margin-left: 18px;
+      width: 91.41vw;
+      margin: 0 auto;
+      position: static;
    }
+
 
    .burger{
       display: flex;
       align-items:center;
       position: fixed;
-      z-index: 160;
+      z-index: 2500;
    }
    .burger_field{
       padding: 5px 4px;
@@ -475,10 +492,11 @@ h1, h2, h3{
       transform: rotate(0);
       flex-direction: column;
       background: #FFFFFF;
-      position: fixed;
-      top: 56px;
+      position: static;
+      padding: 34px 0;
       display: block;
       height: 100vh;
+      padding-top: 106px;
       overflow-y: auto;
       z-index: 1500;
       transition: all 0.4s ease 0s;
@@ -488,12 +506,15 @@ h1, h2, h3{
       flex-direction: row-reverse;
       justify-content: flex-end;
    }
+   .header__navbar{
+      width: 91.41vw;
+      margin: 0 auto;
+   }
    .nav_list{
-      padding: 16px;
       margin: 0;
       flex-direction: column;
       display: flex;
-
+      margin-bottom: 40px;
    }
    .nav_list li{
       margin: 15px 0px;
@@ -526,11 +547,15 @@ h1, h2, h3{
       width: 100%;
    }
    .reviews_description__desc{
-      width: auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       width: 100%;
+   }
+   .reviews_description__desc h3{
+      padding: 55px 16px;
+      margin: 0;
    }
    .latest_boxs{
       overflow-x: auto;
@@ -595,8 +620,22 @@ h1, h2, h3{
       height: 170px;
       right: 169px;
    }
-   .reviews_description__desc{
-      padding: 0 16px 0;
-      width: auto;
+   /* .reviews_description__desc{
+      padding: 0;
+
+   }
+   .reviews_description__desc h3{
+      padding: 55px 16px;
+      min-width: 328px;
+   } */
+}
+
+@media screen and (min-width: 1281px){
+   .competitions-card, 
+   .competitions-card_img,
+   .latest_box,
+   .latest_box__img{
+      width: 21.45vw;
+      height: auto;
    }
 }
