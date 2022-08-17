@@ -33,20 +33,28 @@ h1, h2, h3{
 ._container{
    width: 91.41vw;
 }
+.swiper{
+   display: block;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
 .reviews_description .swiper{
    padding: 15px 0 !important;
 }
+
 .competitions-card.swiper-slide, .latest_box.swiper-slide{
    width: auto !important;
 }
 .reviews_description_wrapper.swiper-wrapper{
    align-items: center;
 }
-.reviews-slide.swiper-slide{
-   
-}
+.reviews-slide.swiper-slide
 .competitions-card.swiper-slide{
    width: auto !important;
+}
+.swiper-pagination{
+   position: relative !important;
 }
 .swiper-pagination-bullet
 .wrapper {
@@ -180,7 +188,16 @@ h1, h2, h3{
    margin-bottom: 15px;
 }
 .competitions-card_img{
+   width: 270px;
+   height: 160px;
    margin-bottom: 20px;
+}
+.competitions-card_info{
+   padding: 0 20px;
+}
+.competitions-card_img img{
+   width: 100%;
+   height: 100%;
 }
 .competitions-card__brand h3{
    font-size: 20px;
@@ -203,25 +220,26 @@ h1, h2, h3{
    text-decoration-line: line-through;
    color: #999999;
 }
-.card-arrow{
-   position: relative;
-   right: 0;
-   width: 40px;
-   height: 40px;
-   background: #346CD9;
-   border-radius: 10px 0px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
 .competitions-card__remaining{
    display: flex;
    justify-content: space-between;
    align-items: center;
    color: #343434;
+   margin-bottom: 11px;
 } 
-.competitions-card__brand, .competitions-card__price, .competitions-card__remaining{
-   padding-left: 20px;
+.competitions-card__remaining::after{
+   content: "\279C";
+   width: 40px;
+   height: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color:white;
+   background: #346CD9;
+   border-radius: 10px 0px;
+   position: absolute;
+   right: 0;
+   cursor: pointer;
 }
 .how{
    display: flex;
@@ -264,29 +282,34 @@ h1, h2, h3{
    display: flex;
    margin-bottom: 100px;
    align-items: center;
-   height: 400px;
+   min-height: 400px;
 }
 .reviews-slide{
    margin: 0 auto;
    height: 100%;
+   display: flex;
 }
 .reviews_description{
    min-height: 400px;
    background: rgba(52, 108, 217, 0.12);
-   width: 50%;
-   display: flex;
-   flex-direction: column;
+   width: 100%;
    align-items: center;
    justify-content: center;
    padding: 16px;
 }
 .reviews_description__desc{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width: 50%;
+}
+.reviews_description__desc h3{
    font-family: 'Open Sans';
    font-weight: 600;
    font-size: 20px;
    line-height: 30px;
    color: #343434;
-   max-width: 400px;
+   min-width: 400px;
    padding: 0 120px 0;
    text-align: center;
    margin: 30px auto;
@@ -294,11 +317,6 @@ h1, h2, h3{
 .reviews_description__autor{
    text-align: center;
    margin-bottom: 40px;
-}
-.reviews_description__dots{
-   display: flex;
-   justify-content: center;
-   margin: 0 -7.5px;
 }
 .swiper-pagination-bullet{
    width: 10px !important;
@@ -310,6 +328,10 @@ h1, h2, h3{
 }
 .reviews_photo{
    width: 50%;
+   min-height: 400px;
+}
+.reviews_photo img{
+   width: 100%;
    height: 100%;
 }
 .latest{
@@ -375,7 +397,11 @@ h1, h2, h3{
 .footer__link li a{
    color: #FFFFFF;
 }
+
 @media only screen and (max-width: 1100px){
+   .reviews_description.swiper{
+      display: flex;
+   }
    .header{
       flex-direction: column;
       margin: 0 auto;
@@ -442,11 +468,11 @@ h1, h2, h3{
       background: #FF2E63;
    }
    .menu{
-      transform: translate(0px, -3000%);
+      transform: rotate(720deg) translateX(-200%);
       transition: all 0.3s ease 0s;
    }
    .menu._active{
-      transform: translate(0px, 0px);
+      transform: rotate(0);
       flex-direction: column;
       background: #FFFFFF;
       position: fixed;
@@ -455,6 +481,7 @@ h1, h2, h3{
       height: 100vh;
       overflow-y: auto;
       z-index: 1500;
+      transition: all 0.4s ease 0s;
    }
    .header__login._active{
       display: flex;
@@ -492,7 +519,19 @@ h1, h2, h3{
       height: auto;
       left: 0;
    }
-
+   .reviews_photo{
+      display: none;
+   }
+   .reviews_description{
+      width: 100%;
+   }
+   .reviews_description__desc{
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+   }
    .latest_boxs{
       overflow-x: auto;
    }
@@ -514,17 +553,6 @@ h1, h2, h3{
    }
    .footer__link li{
       margin-bottom: 10px;
-   }
-}
-@media only screen and (max-width: 1024px){
-   .reviews_photo{
-      display: none;
-   }
-   .reviews_description{
-      width: 100%;
-   }
-   .reviews_description__desc{
-      width: auto;
    }
 }
 @media only screen and (max-width: 768px){

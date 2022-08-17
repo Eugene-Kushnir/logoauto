@@ -39,21 +39,20 @@ new Swiper('.competitions-cards, .latest_boxs', {
       onlyInViewport: true,
    },
    slidesPerView: 'auto',
-
    spaceBetween: 30,
    initialSlide: 0,
-   loop: true,
    autoplay: {
       delay: 3000,
       disableOnInteraction: false
     },
-    speed: 800
+    loop: true,
+    speed: 800,
 });
 
 new Swiper('.reviews_description', {
    grabCursor: true,
    slideToClickedSlide: true,
-   slidesPerView: '1',
+   slidesPerView: 1,
    keyboard: {
       enabled: true,
       onlyInViewport: true,
